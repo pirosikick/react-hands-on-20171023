@@ -1,4 +1,4 @@
-/* vim: set nofoldenable: */
+<!-- vim: set nofoldenable: -->
 
 # 事前準備
 
