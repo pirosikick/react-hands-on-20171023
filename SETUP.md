@@ -1,4 +1,4 @@
-/* :vim set nofoldable: */
+/* vim: set nofoldenable: */
 
 # 事前準備
 
@@ -50,14 +50,14 @@ https://nodejs.org/ja/
 
 左側の「6.XX.X LTS 推奨版」と書いている緑色のボタン（リンク）を押します。「node-v6.XX.X.pkg」（XX.Xの部分にはバージョン番号が入ります）のダウンロードが開始しされるはずです。
 
-![Node.jsの公式サイト](./images/installer-on-mac/1-nodejs-org.png)
+![Node.jsの公式サイト](images/installer-on-mac/1-nodejs-org.png)
 もし、下記のファイル一覧ページに遷移した場合は、「node-v6.XX.X.pkg」のリンクをクリックしてください。
 
-![ファイル一覧](./images/installer-on-mac/2-installer.png)
+![ファイル一覧](images/installer-on-mac/2-installer.png)
 
 「node-v6.XX.X.pkg」を開くとインストーラーが起動しますので、あとはインストーラーの表示したがって進めればインストール完了です。
 
-![インストーラー画面](./images/installer-on-mac/3-installer-window.png)
+![インストーラー画面](images/installer-on-mac/3-installer-window.png)
 
 下記コマンドをコンソール上（Terminal.appやiTerm2）で実行し、バージョンが表示されれば正常にインストールが完了しています。
 
