@@ -8,7 +8,7 @@
 - create-react-appのインストール
 - （任意）yarnのインストール
 
-また、[Firebase](https://firebase.google.com/?hl=ja)を使いますので、任意のGoogleアカウントをご用意ください。
+また、[Firebase](https://firebase.google.com/?hl=ja)を使いますので、任意の **Googleアカウント** をご用意ください。
 
 <br>
 <br>
