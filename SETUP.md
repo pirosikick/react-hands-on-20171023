@@ -45,7 +45,7 @@ $ npm -v
 ついでに、npmのバージョンを最新にしておきましょう。
 
 ```console
-$ npm install -g npm
+$ npm install --global npm
 ...
 
 $ npm -v
@@ -82,7 +82,7 @@ $ npm -v
 ついでに、npmのバージョンを最新にしておきましょう。
 
 ```console
-$ npm install -g npm
+$ npm install --global npm
 ...
 
 $ npm -v
@@ -111,7 +111,7 @@ https://nodejs.org/ja/
 
 コマンドプロンプトで`node -v`、`npm -v`を実行し、バージョンが表示されれば、正常にインストールが出来ています。
 
-![コマンドプロンプト](images/win/4-commad-prompt.png)
+![コマンドプロンプト](images/win/4-command-prompt.png)
 
 ついでに、npmを最新にしておきましょう。`npm install --global npm`をコマンドプロンプトで実行します。
 
