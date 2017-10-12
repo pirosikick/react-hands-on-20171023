@@ -8,11 +8,18 @@
 - create-react-appのインストール
 - （任意）yarnのインストール
 
+また、[Firebase](https://firebase.google.com/?hl=ja)を使いますので、任意のGoogleアカウントをご用意ください。
+
+<br>
+<br>
+
 ## Node.jsのインストール
 
 開発ツール等がnpmパッケージで公開されていますので、Node.js（と同梱されているnpm）のインストールが必須です。Node.jsのv6系（このドキュメントを記述していた時の最新は6.11.4）のインストールをお願いします。
 
 ### Macの場合
+
+方法を2つ紹介します。この2つ以外にも、nenvやnodebrew等を使う方法もありますが、アドバンスなので今回紹介しません。
 
 - Homebrewでインストールする
 - インストーラーを使ってインストールする
@@ -102,6 +109,20 @@ https://nodejs.org/ja/
 
 ![インストーラー](images/win/3-installer-win.png)
 
+コマンドプロンプトで`node -v`、`npm -v`を実行し、バージョンが表示されれば、正常にインストールが出来ています。
+
+![コマンドプロンプト](images/win/4-commad-prompt.png)
+
+ついでに、npmを最新にしておきましょう。`npm install --global npm`をコマンドプロンプトで実行します。
+
+```console
+C:\xxxxx > npm install --global npm
+...
+
+C:\xxxxx > npm -v
+5.4.2
+```
+
 <br>
 <br>
 
@@ -111,7 +132,7 @@ ceate-react-appとは、React.jsのプロジェクトテンプレートを簡単
 
 https://github.com/facebookincubator/create-react-app
 
-create-react-appは、npmパッケージとして公開されていますので、下記のコマンドを実行するとインストールできます。
+create-react-appは、npmパッケージとして公開されていますので、`npm install --global create-react-app`をWindowsの場合はコマンドプロンプトで、Macの場合はTerminal.appやiTerm2のコンソールで実行するとインストールできます。正常にインストールできているかは`create-react-app --version`を実行することで確認できます。
 
 ```console
 # create-react-appのインストール
@@ -131,5 +152,5 @@ yarnとは、ざっくりと説明しますと、Facebookが開発しているnp
 
 https://yarnpkg.com/en/
 
-インストールについては、下記ドキュメントを御覧ください。macOSに関してはHomebrewなど、Windowsに関してはインストーラーが提供されています。
+インストールについては、下記ドキュメントを御覧ください。macOSに関してはHomebrewなどでインストールできます。Windowsに関してはインストーラーが提供されています。
 
