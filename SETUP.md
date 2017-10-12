@@ -26,7 +26,7 @@
 
 #### Homebrewでインストールする
 
-下記コマンドをコンソール上（Terminal.appやiTerm2）で実行してください。
+[Homebrew](https://brew.sh/index_ja.html)を既に導入している環境であれば、Homebrewでインストール、管理する方が楽です。下記コマンドをコンソール上（Terminal.appやiTerm2）で実行してください。
 
 ```console
 $ brew install node@6
