@@ -4,11 +4,19 @@
 
 会場のWiFi環境が悪い可能性もありますので、下記ソフトウェアを事前にインストールしてご参加ください。
 
+- エディタ
 - Node.jsのインストール
 - create-react-appのインストール
 - （任意）yarnのインストール
 
 また、[Firebase](https://firebase.google.com/?hl=ja)を使いますので、任意の **Googleアカウント** をご用意ください。
+
+<br>
+<br>
+
+## エディタ
+
+ハンズオンではコードを書きますので、エディタが必要です。普段お使いのエディタがある場合はそちらでかまいません。ない場合は、[Atom](https://atom.io/)や[Visual Studio Code](https://code.visualstudio.com/)がおすすめです。
 
 <br>
 <br>
