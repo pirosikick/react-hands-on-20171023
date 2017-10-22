@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import { List, ListItem } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import FontIcon from 'material-ui/FontIcon';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import 'firebase/firestore';
 import * as firebase from 'firebase';
+import Loading from '../Loading';
 
 class RoomList extends Component {
   static propTypes = {
     history: PropTypes.shape({
-      replace: PropTypes.func.isRequired
-    })
+      replace: PropTypes.func.isRequired,
+    }),
   };
 
   state = {
@@ -16,14 +24,13 @@ class RoomList extends Component {
   };
 
   componentDidMount() {
-
     const db = firebase.firestore();
     const roomsRef = db.collection('rooms');
 
     this.unsubscribe = roomsRef.onSnapshot(snapshot => {
       const rooms = snapshot.docs.map(doc => ({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       }));
 
       this.setState({ rooms });
@@ -36,7 +43,7 @@ class RoomList extends Component {
     }
   }
 
-  handleClick = () => {
+  createRoom = () => {
     const roomName = window.prompt('部屋名を入力してください');
     if (!roomName) {
       return;
@@ -53,29 +60,49 @@ class RoomList extends Component {
 
     let contents;
     if (!isRoomsLoaded) {
-      contents = <p>読み込み中...</p>;
+      contents = <Loading />;
     } else if (!rooms.length) {
-      contents = <p>部屋がありません</p>;
+      contents = (
+        <List>
+          <ListItem primaryText="部屋がありません" />
+        </List>
+      );
     } else {
-      contents = rooms.map(room => (
-        <li key={`room-${room.id}`}>
-          {room.name} <Link to={`/room/${room.id}`}>入室</Link>
-        </li>
-      ));
+      contents = (
+        <List>
+          {rooms.map(room => (
+            <ListItem
+              key={`room-${room.id}`}
+              primaryText={room.name}
+              rightIcon={
+                <FontIcon className="material-icons">chevron_right</FontIcon>
+              }
+              onClick={() => {
+                this.props.history.push(`/room/${room.id}`);
+              }}
+            />
+          ))}
+        </List>
+      );
     }
 
     return (
       <div>
-        <h1>ルーム一覧</h1>
-        <button onClick={this.handleClick} disabled={!isRoomsLoaded}>
-          部屋を追加する
-        </button>
+        <AppBar title="ルーム一覧" iconClassNameLeft={null} />
+
+        <FloatingActionButton
+          style={{ position: 'fixed', bottom: '10px', right: '10px' }}
+          onClick={this.createRoom}
+        >
+          <ContentAdd />
+        </FloatingActionButton>
+
+        <Divider />
 
         {contents}
       </div>
     );
   }
 }
-RoomList.propTypes = {};
 
 export default RoomList;

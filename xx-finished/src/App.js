@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import UserOnlyRoute from './UserOnlyRoute';
-import Login from './pages/Login'
+import Login from './pages/Login';
 import RoomList from './pages/RoomList';
 import Room from './pages/Room';
 
 class App extends Component {
   state = {
     authStateChecked: false,
-    user: null
+    user: null,
   };
 
   componentDidMount() {
@@ -33,14 +34,18 @@ class App extends Component {
     }
 
     return (
-      <HashRouter>
-        <Switch>
-          <UserOnlyRoute path="/" exact component={RoomList} />
-          <UserOnlyRoute path="/room/:id" component={Room} />
-          <Route path="/login" component={Login} />
-          <Redirect to="/" />
-        </Switch>
-      </HashRouter>
+      <MuiThemeProvider>
+        <HashRouter>
+          <div>
+            <Switch>
+              <UserOnlyRoute path="/" exact component={RoomList} />
+              <UserOnlyRoute path="/room/:id" component={Room} />
+              <Route path="/login" component={Login} />
+              <Redirect to="/" />
+            </Switch>
+          </div>
+        </HashRouter>
+      </MuiThemeProvider>
     );
   }
 }

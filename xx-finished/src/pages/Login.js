@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import RaisedButton from 'material-ui/RaisedButton';
 import * as firebase from 'firebase';
 
 class Login extends Component {
@@ -42,7 +43,11 @@ class Login extends Component {
     return (
       <div>
         {error ? <p>ログインエラー</p> : ''}
-        <button onClick={this.handleClick}>ログイン</button>
+        <RaisedButton
+          label="ログイン"
+          fullWidth={true}
+          onClick={this.handleClick}
+        />
       </div>
     );
   }
