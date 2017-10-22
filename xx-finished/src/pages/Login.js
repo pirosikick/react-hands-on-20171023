@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as firebase from 'firebase';
-import isUserRegistered from '../findUser';
 
 class Login extends Component {
   static propTypes = {
@@ -28,14 +27,6 @@ class Login extends Component {
     firebase
       .auth()
       .signInWithPopup(provider)
-      .then(({ user }) => {
-        const db = firebase.firestore();
-        return db.doc(`users/${user.uid}`).add({
-          uid: user.uid,
-          displayName: user.displayName,
-          photoURL: user.photoURL,
-        });
-      })
       .then(() => {
         this.props.history.replace('/');
       })
