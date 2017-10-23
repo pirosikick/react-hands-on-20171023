@@ -11,7 +11,6 @@ class App extends Component {
       <HashRouter>
         <div>
           <Switch>
-            {/* UserOnlyRouteはログイン状態でないとアクセスできない */}
             <Route path="/" exact component={RoomList} />
             <Route path="/room/:id" component={Room} />
             <Route path="/login" component={Login} />
