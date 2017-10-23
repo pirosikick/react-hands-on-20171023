@@ -19,10 +19,10 @@ react-routerは、Reactでページルーティングを行うためのライブ
 
 ```js
 # npmの場合
-$ npm install --save react-router
+$ npm install --save react-router-dom
 
 # yarnの場合
-$ yarn add react-router
+$ yarn add react-router-dom
 ```
 
 特徴としては、ページルーティングの設定もReactのコンポーネントを使って表現するところです。（後述）
