@@ -1,4 +1,4 @@
-<!-- vim: nofoldenable: -->
+<!-- vim: set nofoldenable: -->
 
 ## 手順
 
@@ -31,6 +31,55 @@ $ yarn start
 ## 今回使われているES2015以降の構文
 
 ### ES Modules
+
+ES2015より正式に定義されたJavaScriptのモジュール方式。JavaやPythonならimport文、Node.jsやRubyではrequire文を使うことで他のファイルに定義されているクラス、関数、変数などを利用することが出来ますが、そのようなことがJavaScriptでも構文として定義されました。アプリケーションをここのモジュールに分割し管理することで、モジュール毎にテストができたり、ロジックをモジュールに閉じることで、アプリケーション全体の見通しがよくなります。
+
+```js
+// a.js
+// モジュールの定義
+export const someVar = 'hoge';
+export default function hello() { ... }
+
+// b.js
+// モジュールの参照
+// a.jsnに定義されているsomeVar変数、hello関数を参照
+import hello, { someVar } from './a';
+```
+
+ChromeやSafariなどでは既に実装されていますがまだ実験段階な部分も多く、IE11などのやや古いブラウザではもちろん動きませんので、webpackを使ってES Modulesで書かれたファイル群を束ねて一つの静的なファイルに出力し、幅広いブラウザで動作するようにしています。
+
+### class構文
+
+ES2015よりJavaScriptにもclass構文が導入されました。`src/App.js`はReactのコンポーネントをclass構文を用いて定義しています。
+
+```js
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+// Appクラスの定義
+// - Componentを継承している
+class App extends Component {
+  // constructorは省略されている
+
+  // renderメソッドの定義
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
 
 ## 補足
 
