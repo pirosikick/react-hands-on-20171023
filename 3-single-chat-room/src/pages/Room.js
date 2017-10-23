@@ -1,19 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class Room extends Component {
-  static propTypes = {
-    match: PropTypes.shape({
-      params: PropTypes.object.isRequired,
-      isExact: PropTypes.bool.isRequired,
-      path: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }).isRequired,
-    location: PropTypes.shape({
-      state: PropTypes.object,
-    }).isRequired,
-  };
-
   state = {
     name: 'チャット部屋',
     input: '',
