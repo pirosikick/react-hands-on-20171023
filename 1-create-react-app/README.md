@@ -1,5 +1,9 @@
 <!-- vim: set nofoldenable: -->
 
+# create-react-appで開発環境を構築する
+
+まず、create-react-appを使って開発環境を構築します。
+
 ## 手順
 
 1. create-react-appを実行し、プロジェクトのベースを構築する
