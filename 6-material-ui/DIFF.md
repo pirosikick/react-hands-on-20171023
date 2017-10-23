@@ -1,3 +1,4 @@
+```diff
 diff -rf 5-use-firebase/src/App.css 6-material-ui/src/App.css
 a0
 html {
@@ -212,3 +213,4 @@ c79 81
 c83
         <Divider />
 .
+```
