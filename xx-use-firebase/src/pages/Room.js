@@ -26,7 +26,7 @@ class Room extends Component {
     name: this.props.location.state && this.props.location.state.name,
     input: '',
     sending: false,
-    messages: null
+    messages: null,
   };
 
   componentDidMount() {
