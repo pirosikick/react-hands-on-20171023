@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "format": "prettier --write *.json src/**/*.css && prettier-eslint --write src/**/*.js"
+    "format": "prettier --write *.json src/**/*.css && prettier-eslint --write src/**/*.js",
+    "deploy": "npm run build && firebase deploy"
   },
   "devDependencies": {
     "eslint": "^4.9.0",

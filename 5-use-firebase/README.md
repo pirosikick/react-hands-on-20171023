@@ -1,3 +1,5 @@
+<!-- vim: set nofoldenable: -->
+
 # firebaseを使う
 
 firebaseを使って、下記を実現しましょう
@@ -349,7 +351,7 @@ unsubscribe();
 
 ## 前ステップとの差分
 
-TODO
+[差分](DIFF.md)
 
 ## ES2015以降の構文
 
