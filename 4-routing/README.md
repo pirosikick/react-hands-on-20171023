@@ -119,6 +119,22 @@ HashRouterコンポーネントを使うと、URLのハッシュ値（`#/hogehog
 
 などがあります。
 
+#### 各ページのComponentに渡されるprops
+
+RoomListやRoomなどのRouteコンポーネントのcomponentに渡されたコンポーネントには、下記のpropsが渡されます。
+
+- history
+  - ルーティングを操作するメソッドが提供されている
+  - `history.push(path)` ... pathに遷移
+  - `history.replace(path)` ... 現在のルートを指定したpathに置き換える
+  - `history.goBack()`, `history.goForward()` ... 戻る、進む
+- location
+  - `location.pathname`
+  - `location.search`
+  - `location.hash`
+  - `location.state`
+- match
+
 ## 前ステップとの差分
 
 TODO
